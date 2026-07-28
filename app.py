@@ -6,12 +6,12 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return jsonify({"message": "Welcome to the Flask API! version 2.0"})
+    return jsonify({"message": "Welcome to the Flask API! version 3.0"})
 
 
 @app.route("/employees")
 def get_employees():
-    return jsonify([{"id": 1, "name": "John"}, {"id": 2, "name": "Mary"}])
+    return jsonify([{"id": 1, "name": "John"}, {"id": 2, "name": "Manisha"}])
 
 
 if __name__ == "__main__":
