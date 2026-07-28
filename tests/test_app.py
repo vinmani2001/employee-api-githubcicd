@@ -13,4 +13,4 @@ def test_get_employees(client):
     response = client.get("/employees")
 
     assert response.status_code == 200
-    assert response.get_json() == [{"id": 1, "name": "John"}, {"id": 2, "name": "Mary"}]
+    assert response.get_json() == [{"id": 1, "name": "John"}, {"id": 2, "name": "Manisha"}]
