@@ -27,6 +27,7 @@ spec:
       - name: employee-api
 
         image: employeeacr.azurecr.io/employee-api:latest
+        imagePullPolicy: Always
 
         ports:
 
