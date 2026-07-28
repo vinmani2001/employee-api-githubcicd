@@ -1,1 +1,58 @@
 # employee-api-githubcicd
+
+
+# old CI pipeline -- working 
+name: Python CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@v5
+
+    - name: Setup Python
+      uses: actions/setup-python@v6
+      with:
+        python-version: '3.12'
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install flake8
+
+    - name: List files 
+      run: |
+          ls -la
+          find . -name "*.py" -print    
+      
+
+    - name: Run Tests
+      run: |
+        python -m pytest -v 
+
+    # - name: Lint Code
+    #   run: |
+    #     flake8 .
+
+    - name: Format Check
+      run: |
+        black --check .
+
+    
+    - name: Mk Build Docker Image
+      run: |
+        docker build -t employee-api .

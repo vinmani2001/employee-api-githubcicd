@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return jsonify({"message": "Welcome to the Flask API! version 1.0"})
+    return jsonify({"message": "Welcome to the Flask API! version 2.0"})
 
 
 @app.route("/employees")
