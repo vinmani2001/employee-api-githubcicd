@@ -29,6 +29,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: List files 
+      run: |
+          ls -la
+          find . -name "*.py" -print    
+      
+
     - name: Run Tests
       run: |
         pytest
@@ -40,6 +46,7 @@ jobs:
     - name: Format Check
       run: |
         black --check .
+
     
     - name: Mk Build Docker Image
       run: |
