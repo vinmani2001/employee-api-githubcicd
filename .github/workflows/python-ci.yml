@@ -37,7 +37,7 @@ jobs:
 
     - name: Run Tests
       run: |
-        pytest
+        python -m pytest -v 
 
     - name: Lint Code
       run: |
